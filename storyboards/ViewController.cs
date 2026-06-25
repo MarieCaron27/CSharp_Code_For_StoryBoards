@@ -27,26 +27,4 @@ public partial class ViewController : NSViewController
             // Update the view, if already loaded.
         }
     }
-    
-    partial void OnButtonClicked(NSButton sender)
-    {
-        // 1. Votre logique métier ou validation ici
-        Console.WriteLine("Utilisateur validé");
-
-        // 2. Déclenchement de la transition programmée
-        this.PerformSegue("goToProfile", this); 
-    }
-    
-    public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
-    {
-        base.PrepareForSegue (segue, sender);
-
-        // Take action based on Segue ID
-        switch (segue.Identifier) {
-            case "MyNamedSegue":
-                // Prepare for the segue to happen
-                NSApplication.SharedApplication.MainWindow.Title = "CLICK OK";
-                break;
-        }
-    }
 }
